@@ -8,14 +8,12 @@ import 'package:flutter/material.dart';
 class HomeScreen extends StatelessWidget {
   var category = [
     'Best Places',
-    'Most Visited'
+    'Most Visited',
         'Favourites',
     'New Added',
     'Hotels',
     'Restaurants'
   ];
-
-  HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +28,15 @@ class HomeScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Expanded(
-                  child: SizedBox(
-                    height: 200,
-                    child: ListView.builder(
+                 Container(
+                   child: SizedBox(
+                     height: 200,
+                     child:
+                     ListView.builder(
                       itemCount: 10,
                       scrollDirection: Axis.horizontal,
                       shrinkWrap: true,
+                      
                       itemBuilder: (BuildContext context, int index) {
                         return InkWell(
                           onTap: () {
@@ -88,8 +88,8 @@ class HomeScreen extends StatelessWidget {
                         );
                       },
                     ),
-                  ),
-                ),
+                   ),
+                 ),
                 const SizedBox(height: 20),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -97,7 +97,7 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(8),
                     child: Row(
                       children: [
-                        for (int i = 0; i < 10; i++)
+                        for (int i = 0; i < 5; i++)
                           Container(
                             margin: const EdgeInsets.symmetric(horizontal: 10),
                             padding: const EdgeInsets.all(10),
